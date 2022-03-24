@@ -1,0 +1,99 @@
+.main-container {
+    width: 80%;
+    margin: auto;
+
+    .intro-section {
+        width: 80%;
+        margin: 20px auto;
+        background: #48685e7a;
+        padding: 20px;
+        border-radius: 20px;
+
+        h3 {
+            font-variant: small-caps;
+            font-size: 35px;
+            color: #f0f8ff7a;
+            text-align: center;
+        }
+
+        h5 {
+            margin: 1rem 2rem;
+            font-size: 17px;
+        }
+    }
+
+    .examples {
+        display: inline-flex;
+        justify-content: center;
+        width: 100%;
+
+        button {
+            margin: 0 20px;
+            background: #a7b7b2;
+            width: 150px;
+            color: aliceblue;
+        }
+    }
+}
+
+.dictionary-container {
+    border: 5px solid #a7b7b2;
+    border-radius: 20px;
+    padding: 15px;
+
+    .container-header {
+        display: inline-flex;
+
+        h3 {
+            margin: 1rem 2rem;
+            color: #a7b7b2;
+            letter-spacing: 1px;
+        }
+
+        button {
+            background: #a7b7b2;
+            color: aliceblue;
+        }
+    }
+
+}
+
+.dictionary-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    .word-container {
+        display: inline-flex;
+        margin: 0 2rem;
+
+        .word-field {
+            width: 140px;
+        }
+    }
+}
+
+.string-field {
+    margin: auto;
+    display: block;
+    width: 200px;
+    text-align: center;
+}
+
+.form-footer button {
+    margin: 20px auto;
+    display: block;
+    background: #a7b7b2;
+    color: aliceblue;
+    font-size: 18px;
+    height: 50px;
+}
+
+.result {
+    width: 70%;
+    background: #a7b7b2;
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+    border-radius: 15px;
+}

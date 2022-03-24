@@ -1,0 +1,57 @@
+<div class="main-container">
+  <div class="intro-section">
+    <h3>Word Split Application</h3>
+    <h5>Problem data</h5>
+    <p>Given a list of words and a string made up of those words (no spaces), return the original sentence in a list.
+    </p>
+    <p>If there is more than one possible reconstruction, return any of them.
+      If there is no possible reconstruction, then return an empty array. </p>
+    <p>For example:</p>
+    <ul>
+      <li>Given the set of words 'quick', 'brown', 'the', 'fox', and the string "thequickbrownfox", you should return
+        ['the', 'quick', 'brown', 'fox'].</li>
+      <li>Given the set of words 'bed', 'bath', 'bedbath', 'and', 'beyond', and the string "bedbathandbeyond", return
+        either ['bed', 'bath', 'and', 'beyond] or ['bedbath', 'and', 'beyond'].</li>
+    </ul>
+  </div>
+  <div class="examples">
+    <button mat-button class="fox-example" (click)="setFoxExample()">Fox Example</button>
+    <button mat-button class="bed-example" (click)="setBedExample()">Bed Example</button>
+
+  </div>
+  <div class="problem-solving">
+    <form [formGroup]="dictionaryForm">
+      <mat-form-field appearance="standard" class="string-field">
+        <mat-label>String without spaces</mat-label>
+        <input matInput placeholder="Eg: thequickbrownfox" formControlName="longString">
+      </mat-form-field>
+
+      <div class="dictionary-container">
+        <div class="container-header">
+          <h3>Dictionary</h3>
+          <button mat-button class="add-new-word-btn" (click)="addNewWord('')">New Word</button>
+        </div>
+        <div class="dictionary-list" formArrayName="dictionary">
+          <div class="word-container" *ngFor="let dict of dictionary.controls; index as i" [formGroupName]="i">
+            <mat-form-field appearance="standard" class="word-field">
+              <mat-label>Word</mat-label>
+              <input matInput placeholder="Eg: quick" formControlName="word">
+            </mat-form-field>
+            <button mat-button class="remove-word-btn" (click)="removeWordFromDictionary(i)">
+              <span class="material-icons">delete</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-footer">
+        <button mat-button (click)="onSubmit()">Submit</button>
+      </div>
+
+    </form>
+
+    <div class="result" *ngIf="resultedSentence != ''">
+      <span>{{resultedSentence}}</span>
+    </div>
+  </div>
+</div>
